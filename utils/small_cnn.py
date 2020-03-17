@@ -70,7 +70,7 @@ class SmallCNN(object):
     print('------------- In build model, the input is {} \n'.format(X))
 
 
-    nput_shape = 2
+    input_shape = 2
     np.random.seed(self.random_state)
     tf.set_random_seed(self.random_state)
 

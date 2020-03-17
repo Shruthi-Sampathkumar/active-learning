@@ -158,8 +158,8 @@ def generate_one_curve(X,
     kwargs["N"] = n_active
     kwargs["already_selected"] = already_selected
     batch_AL = sampler.select_batch(**kwargs)
-    print('------------------------------- Already selected is {} \n'.format(already_selected))
-    print('------------------------------- Batch AL is {} \n'.format(batch_AL))
+    #print('------------------------------- Already selected is {} \n'.format(already_selected))
+    #print('------------------------------- Batch AL is {} \n'.format(batch_AL))
     already_selected = already_selected + batch_AL
     kwargs["N"] = n_passive
     kwargs["already_selected"] = already_selected

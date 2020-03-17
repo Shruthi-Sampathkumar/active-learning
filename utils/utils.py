@@ -114,12 +114,28 @@ def get_mldata(data_dir, name):
   if dataname == "checkerboard":
     X, y = create_checker_unbalanced(split=[1./5, 4./5], n=10000, grid_size=4)
   else:
-    filename = os.path.join(data_dir, dataname + ".pkl")
+    filename = os.path.join(data_dir, dataname + ".csv")
     if not gfile.Exists(filename):
       raise NameError("ERROR: dataset not available")
-    data = pickle.load(gfile.GFile(filename, "r"))
-    X = data["data"]
-    y = data["target"]
+    f = open(filename, 'rt')
+    data = list(csv.reader(f))
+    X=[]
+    Y=[]
+    for i in range(len(data[1:])):
+      X.append(data[i][:-1])
+      Y.append(data[i][-1])
+    X = np.asarray(X)
+    Y = np.asarray(Y)  
+
+
+      
+
+    #filename = os.path.join(data_dir, dataname + ".pkl")
+    #if not gfile.Exists(filename):
+      #raise NameError("ERROR: dataset not available")
+    #data = pickle.load(gfile.GFile(filename, "r"))
+    #X = data["data"]
+    #y = data["target"]
     if "keras" in dataname:
       X = X / 255
       y = y.flatten()

@@ -174,7 +174,7 @@ def get_class_counts(y_full, y):
     be the same as long as same y_full is fed in
   """
   classes = np.unique(y_full)
-  print(classesß)
+  print(classes)
   classes = np.sort(classes)
   unique, counts = np.unique(y, return_counts=True)
   complete_counts = []

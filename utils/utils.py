@@ -122,11 +122,12 @@ def get_mldata(data_dir, name):
       raise NameError("ERROR: dataset not available")
     f = open(filename, 'rt')
     data = list(csv.reader(f))
+    data = data[1:]
     X=[]
     y=[]
-    for i in range(len(data[1:])):
-      X.append(data[i][:-1])
-      y.append(data[i][-1])
+    for i in range(len(data)):
+      X.append(data[i][0:13])
+      y.append(data[i][13])
     X = np.asarray(X)
     y = np.asarray(y)  
 

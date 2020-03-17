@@ -123,12 +123,12 @@ def get_mldata(data_dir, name):
     f = open(filename, 'rt')
     data = list(csv.reader(f))
     X=[]
-    Y=[]
+    y=[]
     for i in range(len(data[1:])):
       X.append(data[i][:-1])
-      Y.append(data[i][-1])
+      y.append(data[i][-1])
     X = np.asarray(X)
-    Y = np.asarray(Y)  
+    y = np.asarray(y)  
 
 
       

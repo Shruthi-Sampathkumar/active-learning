@@ -48,7 +48,7 @@ from sampling_methods.constants import get_AL_sampler
 from sampling_methods.constants import get_wrapper_AL_mapping
 from utils import utils
 
-flags.DEFINE_string("dataset", "letter", "Dataset name")
+flags.DEFINE_string("dataset", "heart", "Dataset name")
 flags.DEFINE_string("sampling_method", "margin",
                     ("Name of sampling method to use, can be any defined in "
                      "AL_MAPPING in sampling_methods.constants"))

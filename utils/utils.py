@@ -115,6 +115,7 @@ def get_mldata(data_dir, name):
     X, y = create_checker_unbalanced(split=[1./5, 4./5], n=10000, grid_size=4)
   else:
     filename = os.path.join(data_dir, dataname + ".csv")
+    print('Data File is {}\n'.format(filename))
     if not gfile.Exists(filename):
       raise NameError("ERROR: dataset not available")
     f = open(filename, 'rt')

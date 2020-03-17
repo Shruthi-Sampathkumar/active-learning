@@ -291,6 +291,8 @@ def main(argv):
         save_dir, "log-" + strftime("%Y-%m-%d-%H-%M-%S", gmtime()) + ".txt")
     sys.stdout = utils.Logger(filename)
 
+  print('------------ Line 294 in run_experiments.py')  
+
   confusions = [float(t) for t in FLAGS.confusions.split(" ")]
   mixtures = [float(t) for t in FLAGS.active_sampling_percentage.split(" ")]
   all_results = {}
@@ -298,23 +300,34 @@ def main(argv):
       FLAGS.max_dataset_size)
   normalize_data = FLAGS.normalize_data == "True"
   standardize_data = FLAGS.standardize_data == "True"
+
+  print('-------------- mldata is about to be got')
+
   X, y = utils.get_mldata(FLAGS.data_dir, FLAGS.dataset)
+
+  print("------------- mldata is got")
   starting_seed = FLAGS.seed
 
   for c in confusions:
     for m in mixtures:
       for seed in range(starting_seed, starting_seed + FLAGS.trials):
+        print('------------ Sampler is about to be got')
         sampler = get_AL_sampler(FLAGS.sampling_method)
+        print('------------ Sampler is  got')
+        print('------------ Model is about to be got')
         score_model = utils.get_model(FLAGS.score_method, seed)
+        print('------------ Model is  got')
         if (FLAGS.select_method == "None" or
             FLAGS.select_method == FLAGS.score_method):
           select_model = None
         else:
           select_model = utils.get_model(FLAGS.select_method, seed)
+        print('----------------- Generate one cureve begins')  
         results, sampler_state = generate_one_curve(
             X, y, sampler, score_model, seed, FLAGS.warmstart_size,
             FLAGS.batch_size, select_model, c, m, max_dataset_size,
             standardize_data, normalize_data, FLAGS.train_horizon)
+        print('----------------- Generate one cureve ends')
         key = (FLAGS.dataset, FLAGS.sampling_method, FLAGS.score_method,
                FLAGS.select_method, m, FLAGS.warmstart_size, FLAGS.batch_size,
                c, standardize_data, normalize_data, seed)
@@ -336,7 +349,9 @@ def main(argv):
     existing_files = gfile.Glob(os.path.join(save_dir, filename + "*.pkl"))
     filename = os.path.join(save_dir,
                             filename + "_" + str(1000+len(existing_files))[1:] + ".pkl")
+    print('------------- Dumping begins')
     pickle.dump(all_results, gfile.GFile(filename, "w"))
+    print('--------------- Dummping ends')
     sys.stdout.flush_file()
 
 

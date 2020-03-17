@@ -184,12 +184,12 @@ def generate_one_curve(X,
   else:
     seed_batch = int(warmstart_size)
   seed_batch = max(seed_batch, 6 * len(np.unique(y)))
-  print('xxxxxxxxxxxxxxxx Get train val split begins')
+  #print('xxxxxxxxxxxxxxxx Get train val split begins')
 
   indices, X_train, y_train, X_val, y_val, X_test, y_test, y_noise = (
       utils.get_train_val_test_splits(X,y,max_points,seed,confusion,
                                       seed_batch, split=data_splits))
-  print('xxxxxxxxxxxxxxxx Get train val split ends')
+  #print('xxxxxxxxxxxxxxxx Get train val split ends')
 
   # Preprocess data
   if norm_data:
@@ -198,22 +198,22 @@ def generate_one_curve(X,
     X_val = normalize(X_val)
     X_test = normalize(X_test)
   if standardize_data:
-    print('xxxxxxxxxxxxxxxx Standardizing begins')
+    #print('xxxxxxxxxxxxxxxx Standardizing begins')
     print("Standardizing data")
     scaler = StandardScaler().fit(X_train)
     X_train = scaler.transform(X_train)
     X_val = scaler.transform(X_val)
     X_test = scaler.transform(X_test)
-    print('xxxxxxxxxxxxxxxx standardizing ends')
+    #print('xxxxxxxxxxxxxxxx standardizing ends')
   print("active percentage: " + str(active_p) + " warmstart batch: " +
         str(seed_batch) + " batch size: " + str(batch_size) + " confusion: " +
         str(confusion) + " seed: " + str(seed))
 
   # Initialize samplers
   uniform_sampler = AL_MAPPING["uniform"](X_train, y_train, seed)
-  print('xxxxxxxxxxxxxxxx Sampler begins')
+  #print('xxxxxxxxxxxxxxxx Sampler begins')
   sampler = sampler(X_train, y_train, seed)
-  print('xxxxxxxxxxxxxxxx Sampler ends')
+  #print('xxxxxxxxxxxxxxxx Sampler ends')
 
   results = {}
   data_sizes = []
@@ -240,9 +240,9 @@ def generate_one_curve(X,
     partial_y = y_train[sorted(selected_inds)]
     score_model.fit(partial_X, partial_y)
     if not same_score_select:
-      print('xxxxxxxxxxxxxxxx Model Fit begins')
+      #print('xxxxxxxxxxxxxxxx Model Fit begins')
       select_model.fit(partial_X, partial_y)
-      print('xxxxxxxxxxxxxxxx Model Fit ends')
+      #print('xxxxxxxxxxxxxxxx Model Fit ends')
     acc = score_model.score(X_test, y_test)
     accuracy.append(acc)
     print("Sampler: %s, Accuracy: %.2f%%" % (sampler.name, accuracy[-1]*100))
@@ -301,7 +301,7 @@ def main(argv):
         save_dir, "log-" + strftime("%Y-%m-%d-%H-%M-%S", gmtime()) + ".txt")
     sys.stdout = utils.Logger(filename)
 
-  print('------------ Line 294 in run_experiments.py')  
+  #print('------------ Line 294 in run_experiments.py')  
 
   confusions = [float(t) for t in FLAGS.confusions.split(" ")]
   mixtures = [float(t) for t in FLAGS.active_sampling_percentage.split(" ")]
@@ -311,33 +311,33 @@ def main(argv):
   normalize_data = FLAGS.normalize_data == "True"
   standardize_data = FLAGS.standardize_data == "True"
 
-  print('-------------- mldata is about to be got')
+  #print('-------------- mldata is about to be got')
 
   X, y = utils.get_mldata(FLAGS.data_dir, FLAGS.dataset)
 
-  print("------------- mldata is got")
+  #print("------------- mldata is got")
   starting_seed = FLAGS.seed
 
   for c in confusions:
     for m in mixtures:
       for seed in range(starting_seed, starting_seed + FLAGS.trials):
-        print('------------ Sampler is about to be got')
+        #print('------------ Sampler is about to be got')
         sampler = get_AL_sampler(FLAGS.sampling_method)
-        print('------------ Sampler is  got')
-        print('------------ Model is about to be got')
+        #print('------------ Sampler is  got')
+        #print('------------ Model is about to be got')
         score_model = utils.get_model(FLAGS.score_method, seed)
-        print('------------ Model is  got')
+        #print('------------ Model is  got')
         if (FLAGS.select_method == "None" or
             FLAGS.select_method == FLAGS.score_method):
           select_model = None
         else:
           select_model = utils.get_model(FLAGS.select_method, seed)
-        print('----------------- Generate one cureve begins')  
+        #print('----------------- Generate one cureve begins')  
         results, sampler_state = generate_one_curve(
             X, y, sampler, score_model, seed, FLAGS.warmstart_size,
             FLAGS.batch_size, select_model, c, m, max_dataset_size,
             standardize_data, normalize_data, FLAGS.train_horizon)
-        print('----------------- Generate one cureve ends')
+        #print('----------------- Generate one cureve ends')
         key = (FLAGS.dataset, FLAGS.sampling_method, FLAGS.score_method,
                FLAGS.select_method, m, FLAGS.warmstart_size, FLAGS.batch_size,
                c, standardize_data, normalize_data, seed)
@@ -359,9 +359,9 @@ def main(argv):
     existing_files = gfile.Glob(os.path.join(save_dir, filename + "*.pkl"))
     filename = os.path.join(save_dir,
                             filename + "_" + str(1000+len(existing_files))[1:] + ".pkl")
-    print('------------- Dumping begins')
+    #print('------------- Dumping begins')
     pickle.dump(all_results, gfile.GFile(filename, "w"))
-    print('--------------- Dummping ends')
+    #print('--------------- Dummping ends')
     sys.stdout.flush_file()
 
 

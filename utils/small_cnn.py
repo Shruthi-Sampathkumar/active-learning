@@ -125,7 +125,7 @@ class SmallCNN(object):
       self.encode_map = dict(zip(self.classes_, range(len(self.classes_))))
       self.decode_map = dict(zip(range(len(self.classes_)), self.classes_))
     mapper = lambda x: self.encode_map[x]
-    transformed_y = np.array(map(mapper, y))
+    transformed_y = np.array(list(map(mapper, y)))
     return transformed_y
 
   def decode_y(self, y):

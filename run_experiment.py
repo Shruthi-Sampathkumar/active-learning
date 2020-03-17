@@ -182,10 +182,12 @@ def generate_one_curve(X,
   else:
     seed_batch = int(warmstart_size)
   seed_batch = max(seed_batch, 6 * len(np.unique(y)))
+  print('xxxxxxxxxxxxxxxx Get train val split begins')
 
   indices, X_train, y_train, X_val, y_val, X_test, y_test, y_noise = (
       utils.get_train_val_test_splits(X,y,max_points,seed,confusion,
                                       seed_batch, split=data_splits))
+  print('xxxxxxxxxxxxxxxx Get train val split ends')
 
   # Preprocess data
   if norm_data:
@@ -194,18 +196,22 @@ def generate_one_curve(X,
     X_val = normalize(X_val)
     X_test = normalize(X_test)
   if standardize_data:
+    print('xxxxxxxxxxxxxxxx Standardizing begins')
     print("Standardizing data")
     scaler = StandardScaler().fit(X_train)
     X_train = scaler.transform(X_train)
     X_val = scaler.transform(X_val)
     X_test = scaler.transform(X_test)
+    print('xxxxxxxxxxxxxxxx standardizing ends')
   print("active percentage: " + str(active_p) + " warmstart batch: " +
         str(seed_batch) + " batch size: " + str(batch_size) + " confusion: " +
         str(confusion) + " seed: " + str(seed))
 
   # Initialize samplers
   uniform_sampler = AL_MAPPING["uniform"](X_train, y_train, seed)
+  print('xxxxxxxxxxxxxxxx Sampler begins')
   sampler = sampler(X_train, y_train, seed)
+  print('xxxxxxxxxxxxxxxx Sampler ends')
 
   results = {}
   data_sizes = []
@@ -232,7 +238,9 @@ def generate_one_curve(X,
     partial_y = y_train[sorted(selected_inds)]
     score_model.fit(partial_X, partial_y)
     if not same_score_select:
+      print('xxxxxxxxxxxxxxxx Model Fit begins')
       select_model.fit(partial_X, partial_y)
+      print('xxxxxxxxxxxxxxxx Model Fit ends')
     acc = score_model.score(X_test, y_test)
     accuracy.append(acc)
     print("Sampler: %s, Accuracy: %.2f%%" % (sampler.name, accuracy[-1]*100))

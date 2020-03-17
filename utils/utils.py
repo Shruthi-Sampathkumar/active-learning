@@ -127,7 +127,7 @@ def get_mldata(data_dir, name):
     y=[]
     for i in range(len(data)):
       X.append(data[i][0:13])
-      y.append(int(data[i][13]))
+      y.append(int(float(data[i][13])))
     X = np.asarray(X)
     y = np.asarray(y)  
 

@@ -113,7 +113,7 @@ class SmallCNN(object):
 
   def create_y_mat(self, y):
     y_encode = self.encode_y(y)
-    y_encode = np.reshape(y_encode, (len(y_encode), 1))
+    y_encode = np.reshape(y_encode, (y_encode.size, 1))
     y_mat = keras.utils.to_categorical(y_encode, self.n_classes)
     return y_mat
 

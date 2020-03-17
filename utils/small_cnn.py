@@ -65,12 +65,12 @@ class SmallCNN(object):
 
   def build_model(self, X):
     # assumes that data axis order is same as the backend
-    #input_shape = X.shape[1:]
-    print('------------- In build model, the shape of input is {} \n'.format(X[0].shape))
+    input_shape = X.shape[1:]
+    print('------------- In build model, the shape of input is {} \n'.format(X.shape[1:]))
     print('------------- In build model, the input is {} \n'.format(X))
 
 
-    input_shape = X[0].shape
+    #input_shape = X[0].shape
     np.random.seed(self.random_state)
     tf.set_random_seed(self.random_state)
 

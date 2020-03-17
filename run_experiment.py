@@ -73,7 +73,7 @@ flags.DEFINE_string(
     "score_method", "logistic",
     "Method to use to calculate accuracy.")
 flags.DEFINE_string(
-    "select_method", "None",
+    "select_method", "small_cnn",
     "Method to use for selecting points.")
 flags.DEFINE_string("normalize_data", "False", "Whether to normalize the data.")
 flags.DEFINE_string("standardize_data", "True",

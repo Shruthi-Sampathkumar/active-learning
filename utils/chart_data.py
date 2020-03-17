@@ -35,12 +35,10 @@ flags.DEFINE_string('source_dir',
                     'Directory with the output to analyze.')
 flags.DEFINE_string('save_dir', '/tmp/active_learning',
                     'Directory to save charts.')
-flags.DEFINE_string('dataset', 'letter', 'Dataset to analyze.')
+flags.DEFINE_string('dataset', 'heart', 'Dataset to analyze.')
 flags.DEFINE_string(
     'sampling_methods',
-    ('uniform,margin,informative_diverse,'
-     'pred_expert_advice_trip_agg,'
-     'mixture_of_samplers-margin-0.33-informative_diverse-0.33-uniform-0.34'),
+    ('margin'),
     'Comma separated string of sampling methods to include in chart.')
 flags.DEFINE_string('scoring_methods', 'logistic,kernel_ls',
                     'Comma separated string of scoring methods to chart.')

@@ -37,6 +37,8 @@ from utils.kernel_block_solver import BlockKernelSolver
 from utils.small_cnn import SmallCNN
 from utils.allconv import AllConv
 
+import csv
+
 
 class Logger(object):
   """Logging object to write to file and stdout."""

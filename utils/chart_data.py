@@ -196,7 +196,7 @@ def main(argv):
   sampling_methods = FLAGS.sampling_methods.split(',')
   scoring_methods = FLAGS.scoring_methods.split(',')
   files = gfile.Glob(
-      os.path.join(FLAGS.source_dir, FLAGS.dataset + '*/results*.pkl'))
+      os.path.join(FLAGS.source_dir, FLAGS.dataset + '_' + FLAGS.sampling_methods + '*/results*.pkl'))
   print('------------- Files in CHart Data script are {}\n'.format(files))
   files = [
       f for f in files

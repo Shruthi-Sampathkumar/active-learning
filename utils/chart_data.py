@@ -195,8 +195,9 @@ def main(argv):
                                    FLAGS.dataset + '_charts.pdf')
   sampling_methods = FLAGS.sampling_methods.split(',')
   scoring_methods = FLAGS.scoring_methods.split(',')
-  files = gfile.Glob(
-      os.path.join(FLAGS.source_dir, FLAGS.dataset + '_' + FLAGS.sampling_methods + '*/results*.pkl'))
+  #files = gfile.Glob(
+      #os.path.join(FLAGS.source_dir, FLAGS.dataset + '_' + FLAGS.sampling_methods + '*/results*.pkl'))
+  files = ['tmp/toy_experiments/heart_margin/results_score_logistic_select_linear_svm_norm_False_stand_True_000.pkl']
   print('------------- Files in CHart Data script are {}\n'.format(files))
   files = [
       f for f in files

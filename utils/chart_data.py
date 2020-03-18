@@ -33,7 +33,7 @@ from tensorflow import gfile
 flags.DEFINE_string('source_dir',
                     '/tmp/toy_experiments',
                     'Directory with the output to analyze.')
-flags.DEFINE_string('save_dir', '/results/active_learning',
+flags.DEFINE_string('save_dir', '/tmp/active_learning',
                     'Directory to save charts.')
 flags.DEFINE_string('dataset', 'heart', 'Dataset to analyze.')
 flags.DEFINE_string(

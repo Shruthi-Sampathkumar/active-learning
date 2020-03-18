@@ -161,6 +161,7 @@ def plot_results(all_results, score_method, norm, stand, sampler_filter):
         )
         print('------------- plt.plot is finished executing\n')
         print('------------- plt.fill_between is about to be executed\n')
+        print('X is {}, mean_acc - CI_acc is {}, mean_acc + CI_acc is {}, color is {}, alpha is {}\n '.format(x, mean_acc - CI_acc, mean_acc + CI_acc, colors[sampler], 0.2))
         plt.fill_between(
             x,
             mean_acc - CI_acc,

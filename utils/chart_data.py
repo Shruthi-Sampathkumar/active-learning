@@ -202,8 +202,9 @@ def main(argv):
   if not gfile.Exists(FLAGS.save_dir):
     gfile.MkDir(FLAGS.save_dir)
     print('------- Save dir is made\n')
-  charting_filepath = os.path.join(FLAGS.save_dir,
-                                   FLAGS.dataset + '_charts.pdf')
+  #charting_filepath = os.path.join(FLAGS.save_dir,
+                                   #FLAGS.dataset + '_charts.pdf')
+  charting_filepath = 'heart_charts.pdf'                                 
   print('---------- Charting filepath is {}\n'.format(charting_filepath))
   sampling_methods = FLAGS.sampling_methods.split(',')
   scoring_methods = FLAGS.scoring_methods.split(',')

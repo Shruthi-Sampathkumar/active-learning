@@ -201,8 +201,10 @@ def main(argv):
   del argv  # Unused.
   if not gfile.Exists(FLAGS.save_dir):
     gfile.MkDir(FLAGS.save_dir)
+    print('------- Save dir is made\n')
   charting_filepath = os.path.join(FLAGS.save_dir,
                                    FLAGS.dataset + '_charts.pdf')
+  print('---------- Charting filepath is {}\n'.format(charting_filepath))
   sampling_methods = FLAGS.sampling_methods.split(',')
   scoring_methods = FLAGS.scoring_methods.split(',')
   #files = gfile.Glob(
@@ -220,6 +222,7 @@ def main(argv):
   print('Reading in %d files...' % len(files))
   all_results = combine_results(files)
   pdf = PdfPages(charting_filepath)
+  print('---------- PDF file is made\n')
 
   print('Plotting charts...')
   plt.style.use('ggplot')

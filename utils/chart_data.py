@@ -150,6 +150,7 @@ def plot_results(all_results, score_method, norm, stand, sampler_filter):
         )
       else:
         print('------------- plt.plot is about to be executed\n')
+        print('X is {}\n'.format(x))
         plt.plot(
             x,
             mean_acc,

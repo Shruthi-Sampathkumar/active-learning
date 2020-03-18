@@ -149,6 +149,7 @@ def plot_results(all_results, score_method, norm, stand, sampler_filter):
             alpha=0.2
         )
       else:
+        print('------------- plt.plot is about to be executed\n')
         plt.plot(
             x,
             mean_acc,
@@ -158,6 +159,8 @@ def plot_results(all_results, score_method, norm, stand, sampler_filter):
             marker=markers[sampler],
             markeredgecolor=colors[sampler]
         )
+        print('------------- plt.plot is finished executing\n')
+        print('------------- plt.fill_between is about to be executed\n')
         plt.fill_between(
             x,
             mean_acc - CI_acc,
@@ -165,6 +168,7 @@ def plot_results(all_results, score_method, norm, stand, sampler_filter):
             color=colors[sampler],
             alpha=0.2
         )
+        print('------------- plt.fill_between is finished executed\n')
   plt.legend(loc=4)
 
 

@@ -1,0 +1,149 @@
+Standardizing data
+active percentage: 1.0 warmstart batch: 12 batch size: 4 confusion: 0.0 seed: 1
+Training model on 12 datapoints
+Sampler: margin, Accuracy: 52.94%
+Requested: 4, Selected: 4
+Training model on 16 datapoints
+Sampler: margin, Accuracy: 60.78%
+Requested: 4, Selected: 4
+Training model on 20 datapoints
+Sampler: margin, Accuracy: 72.55%
+Requested: 4, Selected: 4
+Training model on 24 datapoints
+Sampler: margin, Accuracy: 68.63%
+Requested: 4, Selected: 4
+Training model on 28 datapoints
+Sampler: margin, Accuracy: 68.63%
+Requested: 4, Selected: 4
+Training model on 32 datapoints
+Sampler: margin, Accuracy: 72.55%
+Requested: 4, Selected: 4
+Training model on 36 datapoints
+Sampler: margin, Accuracy: 70.59%
+Requested: 4, Selected: 4
+Training model on 40 datapoints
+Sampler: margin, Accuracy: 70.59%
+Requested: 4, Selected: 4
+Training model on 44 datapoints
+Sampler: margin, Accuracy: 70.59%
+Requested: 4, Selected: 4
+Training model on 48 datapoints
+Sampler: margin, Accuracy: 72.55%
+Requested: 4, Selected: 4
+Training model on 52 datapoints
+Sampler: margin, Accuracy: 72.55%
+Requested: 4, Selected: 4
+Training model on 56 datapoints
+Sampler: margin, Accuracy: 70.59%
+Requested: 4, Selected: 4
+Training model on 60 datapoints
+Sampler: margin, Accuracy: 70.59%
+Requested: 4, Selected: 4
+Training model on 64 datapoints
+Sampler: margin, Accuracy: 68.63%
+Requested: 4, Selected: 4
+Training model on 68 datapoints
+Sampler: margin, Accuracy: 68.63%
+Requested: 4, Selected: 4
+Training model on 72 datapoints
+Sampler: margin, Accuracy: 66.67%
+Requested: 4, Selected: 4
+Training model on 76 datapoints
+Sampler: margin, Accuracy: 68.63%
+Requested: 4, Selected: 4
+Training model on 80 datapoints
+Sampler: margin, Accuracy: 70.59%
+Requested: 4, Selected: 4
+Training model on 84 datapoints
+Sampler: margin, Accuracy: 68.63%
+Requested: 4, Selected: 4
+Training model on 88 datapoints
+Sampler: margin, Accuracy: 68.63%
+Requested: 4, Selected: 4
+Training model on 92 datapoints
+Sampler: margin, Accuracy: 68.63%
+Requested: 4, Selected: 4
+Training model on 96 datapoints
+Sampler: margin, Accuracy: 68.63%
+Requested: 4, Selected: 4
+Training model on 100 datapoints
+Sampler: margin, Accuracy: 68.63%
+Requested: 4, Selected: 4
+Training model on 104 datapoints
+Sampler: margin, Accuracy: 70.59%
+Requested: 4, Selected: 4
+Training model on 108 datapoints
+Sampler: margin, Accuracy: 70.59%
+Requested: 4, Selected: 4
+Training model on 112 datapoints
+Sampler: margin, Accuracy: 68.63%
+Requested: 4, Selected: 4
+Training model on 116 datapoints
+Sampler: margin, Accuracy: 68.63%
+Requested: 4, Selected: 4
+Training model on 120 datapoints
+Sampler: margin, Accuracy: 66.67%
+Requested: 4, Selected: 4
+Training model on 124 datapoints
+Sampler: margin, Accuracy: 66.67%
+Requested: 4, Selected: 4
+Training model on 128 datapoints
+Sampler: margin, Accuracy: 64.71%
+Requested: 4, Selected: 4
+Training model on 132 datapoints
+Sampler: margin, Accuracy: 64.71%
+Requested: 4, Selected: 4
+Training model on 136 datapoints
+Sampler: margin, Accuracy: 64.71%
+Requested: 4, Selected: 4
+Training model on 140 datapoints
+Sampler: margin, Accuracy: 66.67%
+Requested: 4, Selected: 4
+Training model on 144 datapoints
+Sampler: margin, Accuracy: 66.67%
+Requested: 4, Selected: 4
+Training model on 148 datapoints
+Sampler: margin, Accuracy: 66.67%
+Requested: 4, Selected: 4
+Training model on 152 datapoints
+Sampler: margin, Accuracy: 66.67%
+Requested: 4, Selected: 4
+Training model on 156 datapoints
+Sampler: margin, Accuracy: 66.67%
+Requested: 4, Selected: 4
+Training model on 160 datapoints
+Sampler: margin, Accuracy: 64.71%
+Requested: 4, Selected: 4
+Training model on 164 datapoints
+Sampler: margin, Accuracy: 66.67%
+Requested: 4, Selected: 4
+Training model on 168 datapoints
+Sampler: margin, Accuracy: 64.71%
+Requested: 4, Selected: 4
+Training model on 172 datapoints
+Sampler: margin, Accuracy: 66.67%
+Requested: 4, Selected: 4
+Training model on 176 datapoints
+Sampler: margin, Accuracy: 66.67%
+Requested: 4, Selected: 4
+Training model on 180 datapoints
+Sampler: margin, Accuracy: 66.67%
+Requested: 4, Selected: 4
+Training model on 184 datapoints
+Sampler: margin, Accuracy: 66.67%
+Requested: 4, Selected: 4
+Training model on 188 datapoints
+Sampler: margin, Accuracy: 68.63%
+Requested: 4, Selected: 4
+Training model on 192 datapoints
+Sampler: margin, Accuracy: 68.63%
+Requested: 4, Selected: 4
+Training model on 196 datapoints
+Sampler: margin, Accuracy: 66.67%
+Requested: 4, Selected: 4
+Training model on 200 datapoints
+Sampler: margin, Accuracy: 66.67%
+Requested: 2, Selected: 2
+Training model on 202 datapoints
+Sampler: margin, Accuracy: 66.67%
+Requested: 0, Selected: 0

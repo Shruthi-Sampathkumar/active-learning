@@ -127,7 +127,8 @@ def plot_results(all_results, score_method, norm, stand, sampler_filter):
         k[fields['normalize']] == norm and
         (sampler_filter is None or sampler in sampler_filter)):
       results = all_results[k]
-      n_trials = results['accuracy'].shape[0]
+      #n_trials = results['accuracy'].shape[0]
+      n_trials = len(results['accuracy'])
       x = results['data_sizes'][0]
       mean_acc = np.mean(results['accuracy'], axis=0)
       CI_acc = np.std(results['accuracy'], axis=0) / np.sqrt(n_trials) * 2.96

@@ -115,9 +115,9 @@ def plot_results(all_results, score_method, norm, stand, sampler_filter):
   }
   fields = all_results['tuple_keys']
   fields = dict(zip(fields, range(len(fields))))
-  print('---------------- Fileds values is {}\n'.format(fields))
-  print('---------------- All results values : {}\n'.format(all_results))
-  print('---------------- All results Keys : {}\n'.format(all_results.keys()))
+  #print('---------------- Fileds values is {}\n'.format(fields))
+  #print('---------------- All results values : {}\n'.format(all_results))
+  #print('---------------- All results Keys : {}\n'.format(all_results.keys()))
   #for k in sorted(all_results.keys()):
   for k in all_results.keys():
     sampler = k[fields['sampler']]
@@ -149,8 +149,8 @@ def plot_results(all_results, score_method, norm, stand, sampler_filter):
             alpha=0.2
         )
       else:
-        print('------------- plt.plot is about to be executed\n')
-        print('X is {}\n'.format(x))
+        #print('------------- plt.plot is about to be executed\n')
+        #print('X is {}\n'.format(x))
         plt.plot(
             x,
             mean_acc,
@@ -160,9 +160,9 @@ def plot_results(all_results, score_method, norm, stand, sampler_filter):
             marker=markers[sampler],
             markeredgecolor=colors[sampler]
         )
-        print('------------- plt.plot is finished executing\n')
-        print('------------- plt.fill_between is about to be executed\n')
-        print('X is {}, mean_acc - CI_acc is {}, mean_acc + CI_acc is {}, color is {}, alpha is {}\n '.format(x, mean_acc - CI_acc, mean_acc + CI_acc, colors[sampler], 0.2))
+        #print('------------- plt.plot is finished executing\n')
+        #print('------------- plt.fill_between is about to be executed\n')
+        #print('X is {}, mean_acc - CI_acc is {}, mean_acc + CI_acc is {}, color is {}, alpha is {}\n '.format(x, mean_acc - CI_acc, mean_acc + CI_acc, colors[sampler], 0.2))
         #plt.fill_between(
             #x,
             #mean_acc - CI_acc,
@@ -170,7 +170,7 @@ def plot_results(all_results, score_method, norm, stand, sampler_filter):
             #color=colors[sampler],
             #alpha=0.2
         #)
-        print('------------- plt.fill_between is finished executed\n')
+        #print('------------- plt.fill_between is finished executed\n')
   plt.legend(loc=4)
 
 

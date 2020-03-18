@@ -233,6 +233,7 @@ def main(argv):
     plt.title('Dataset: %s, Score Method: %s' % (FLAGS.dataset, m))
     pdf.savefig()
     plt.close()
+  print('---------- Finished plotting')  
   pdf.close()
 
 

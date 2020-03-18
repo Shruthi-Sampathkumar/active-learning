@@ -115,8 +115,9 @@ def plot_results(all_results, score_method, norm, stand, sampler_filter):
   }
   fields = all_results['tuple_keys']
   fields = dict(zip(fields, range(len(fields))))
-  print('---------------- All results values : {}'.format(all_results))
-  print('---------------- All results Keys : {}'.format(all_results.keys()))
+  print('---------------- Fileds values is {}\n'.format(fields))
+  print('---------------- All results values : {}\n'.format(all_results))
+  print('---------------- All results Keys : {}\n'.format(all_results.keys()))
   for k in sorted(all_results.keys()):
     sampler = k[fields['sampler']]
     if (isinstance(k, tuple) and

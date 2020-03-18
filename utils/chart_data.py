@@ -31,7 +31,7 @@ from absl import flags
 from tensorflow import gfile
 
 flags.DEFINE_string('source_dir',
-                    '/tmp/toy_experiments',
+                    '/tmp/toy_experiments_results',
                     'Directory with the output to analyze.')
 flags.DEFINE_string('save_dir', '/tmp/active_learning',
                     'Directory to save charts.')

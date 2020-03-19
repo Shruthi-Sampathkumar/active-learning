@@ -58,7 +58,7 @@ flags.DEFINE_float(
      "to use in the initial warmstart model")
 )
 flags.DEFINE_float(
-    "batch_size", 5.0,
+    "batch_size", 0.5,
     ("Can be float or integer.  Float indicates batch size as a percentage "
      "of training data size.")
 )
